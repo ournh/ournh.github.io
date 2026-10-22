@@ -20,7 +20,7 @@
         }
         .container {
             width: 100%;
-            max-width: 900px;
+            max-width: 800px;
             text-align: center;
             background: #ffffff;
             padding: 40px 30px;
@@ -37,35 +37,64 @@
             margin-bottom: 40px;
             font-size: 1.1rem;
         }
-        /* Zine Section Layout */
-        .zine-section {
+        /* Zine Grid Layout */
+        .zine-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            width: 100%;
+        }
+        @media (min-width: 600px) {
+            .zine-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        .zine-card {
             background: #fafafa;
-            padding: 25px;
-            margin-bottom: 40px;
-            border-radius: 6px;
+            padding: 30px 20px;
+            border-radius: 8px;
             border: 1px solid #eaeaea;
-            text-align: left;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            transition: transform 0.2s ease;
         }
-        .zine-section:last-child {
-            margin-bottom: 0; /* Clears bottom margin on the final card */
+        .zine-card:hover {
+            transform: translateY(-2px);
         }
-        .zine-section h2 {
-            font-size: 1.5rem;
+        .zine-info {
+            margin-bottom: 25px;
+        }
+        .zine-card h2 {
+            font-size: 1.4rem;
             margin-top: 0;
-            margin-bottom: 5px;
+            margin-bottom: 10px;
             color: #222;
         }
-        .zine-section p {
+        .zine-card p {
             color: #666;
             font-size: 0.95rem;
-            margin-bottom: 20px;
+            margin: 0;
+            line-height: 1.5;
         }
-        iframe {
+        /* Stylized Action Button */
+        .read-btn {
+            display: inline-block;
+            background-color: #0076ff;
+            color: white;
+            padding: 12px 28px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: background-color 0.2s ease;
             width: 100%;
-            height: 600px;
-            border: 1px solid #e0e0e0;
-            border-radius: 4px;
-            background: #fff;
+            max-width: 200px;
+        }
+        .read-btn:hover {
+            background-color: #0056b3;
         }
     </style>
 </head>
@@ -73,22 +102,29 @@
 
     <div class="container">
         <h1>Our Neighborhood Health</h1>
-        <p class="intro-text">Welcome to our official digital platform. Explore our community resources and partnership zines below.</p>
+        <p class="intro-text">Welcome to our official digital platform. Click a zine below to open its full interactive flipbook in a new tab.</p>
         
-        <!-- Section 1: Main Zine -->
-        <div class="zine-section">
-            <h2>Our Neighborhood Health Zine</h2>
-            <p>Flip through our core community resources and connection hubs.</p>
-            <iframe allowfullscreen allow="autoplay; fullscreen; clipboard-write" scrolling="no" src="https://heyzine.com"></iframe>
-        </div>
+        <div class="zine-grid">
+            
+            <!-- Card 1: Core Zine -->
+            <div class="zine-card">
+                <div class="zine-info">
+                    <h2>Our Neighborhood Health</h2>
+                    <p>Flip through our core community health resources, upcoming local programming, and connection hubs.</p>
+                </div>
+                <a href="https://heyzine.com" target="_blank" class="read-btn">Open Flipbook 📖</a>
+            </div>
 
-        <!-- Section 2: Partnership Zine -->
-        <div class="zine-section">
-            <h2>Epic Integration & Digital Platform</h2>
-            <p>Explore our collaborative zine created for our recent partnership initiative.</p>
-            <iframe allowfullscreen allow="autoplay; fullscreen; clipboard-write" scrolling="no" src="https://heyzine.com"></iframe>
-        </div>
+            <!-- Card 2: Partnership Zine -->
+            <div class="zine-card">
+                <div class="zine-info">
+                    <h2>Epic Integration Platform</h2>
+                    <p>Explore our collaborative digital zine created exclusively for our recent partnership initiative.</p>
+                </div>
+                <a href="https://heyzine.com/flip-book/1cf538e1bb.html" target="_blank" class="read-btn">Open Flipbook 📖</a>
+            </div>
 
+        </div>
     </div>
 
 </body>
