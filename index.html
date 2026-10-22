@@ -20,10 +20,10 @@
         }
         .container {
             width: 100%;
-            max-width: 1000px;
+            max-width: 900px;
             text-align: center;
             background: #ffffff;
-            padding: 30px;
+            padding: 40px 30px;
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.05);
         }
@@ -34,55 +34,28 @@
         }
         .intro-text {
             color: #666;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
             font-size: 1.1rem;
         }
-        /* Tab Navigation Links */
-        .tab-navigation {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-bottom: 30px;
-        }
-        .tab-btn {
-            background-color: #f0f0f0;
-            color: #444;
-            border: 1px solid #dcdcdc;
-            padding: 12px 24px;
-            font-size: 1rem;
-            font-weight: 600;
-            border-radius: 6px;
-            cursor: pointer;
-            transition: all 0.2s ease-in-out;
-        }
-        .tab-btn:hover {
-            background-color: #e4e4e4;
-        }
-        .tab-btn.active {
-            background-color: #0076ff;
-            color: white;
-            border-color: #0066dd;
-            box-shadow: 0 2px 4px rgba(0, 118, 255, 0.2);
-        }
-        /* Content Sections */
-        .zine-panel {
-            display: none;
+        /* Zine Section Layout */
+        .zine-section {
             background: #fafafa;
-            padding: 20px;
+            padding: 25px;
+            margin-bottom: 40px;
             border-radius: 6px;
             border: 1px solid #eaeaea;
-            animation: fadeIn 0.3s ease-in-out;
+            text-align: left;
         }
-        .zine-panel.active {
-            display: block;
+        .zine-section:last-child {
+            margin-bottom: 0; /* Clears bottom margin on the final card */
         }
-        .zine-panel h2 {
-            font-size: 1.4rem;
+        .zine-section h2 {
+            font-size: 1.5rem;
             margin-top: 0;
             margin-bottom: 5px;
             color: #222;
         }
-        .zine-panel p {
+        .zine-section p {
             color: #666;
             font-size: 0.95rem;
             margin-bottom: 20px;
@@ -94,56 +67,29 @@
             border-radius: 4px;
             background: #fff;
         }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(5px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
     </style>
 </head>
 <body>
 
     <div class="container">
         <h1>Our Neighborhood Health</h1>
-        <p class="intro-text">Welcome to our official digital platform. Select a view below to explore our community resources and partnership zines.</p>
+        <p class="intro-text">Welcome to our official digital platform. Explore our community resources and partnership zines below.</p>
         
-        <!-- Toggle Button Navigation -->
-        <div class="tab-navigation">
-            <button class="tab-btn active" onclick="switchZine('zine1')">Our Neighborhood Health</button>
-            <button class="tab-btn" onclick="switchZine('zine2')">Epic Integration Platform</button>
-        </div>
-
-        <!-- Panel 1: Original Zine -->
-        <div id="zine1" class="zine-panel active">
+        <!-- Section 1: Main Zine -->
+        <div class="zine-section">
             <h2>Our Neighborhood Health Zine</h2>
             <p>Flip through our core community resources and connection hubs.</p>
-            <iframe allowfullscreen allow="autoplay; fullscreen; clipboard-write" scrolling="no" src="https://heyzine.com/flip-book/fb598a2da8.html"></iframe>
+            <iframe allowfullscreen allow="autoplay; fullscreen; clipboard-write" scrolling="no" src="https://heyzine.com"></iframe>
         </div>
 
-        <!-- Panel 2: Partnership Zine -->
-        <div id="zine2" class="zine-panel">
+        <!-- Section 2: Partnership Zine -->
+        <div class="zine-section">
             <h2>Epic Integration & Digital Platform</h2>
             <p>Explore our collaborative zine created for our recent partnership initiative.</p>
             <iframe allowfullscreen allow="autoplay; fullscreen; clipboard-write" scrolling="no" src="https://heyzine.com"></iframe>
         </div>
-    </div>
 
-    <!-- Script to handle switching without server lag -->
-    <script>
-        function switchZine(zineId) {
-            // Remove active classes from all panels
-            document.querySelectorAll('.zine-panel').forEach(panel => {
-                panel.classList.remove('active');
-            });
-            // Remove active classes from all buttons
-            document.querySelectorAll('.tab-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            
-            // Activate target panel and target button
-            document.getElementById(zineId).classList.add('active');
-            event.currentTarget.classList.add('active');
-        }
-    </script>
+    </div>
 
 </body>
 </html>
