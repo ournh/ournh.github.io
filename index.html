@@ -5,18 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Neighborhood Health - Zine</title>
     <style>
-        * {
-            box-sizing: border-box;
-        }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
             margin: 0;
             padding: 20px;
             background-color: #f9f9f9;
             display: flex;
             flex-direction: column;
             align-items: center;
-            color: #333;
         }
         .container {
             width: 100%;
@@ -27,33 +23,9 @@
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.05);
         }
-        h1 {
-            margin-top: 0;
-            font-size: 2rem;
-            color: #111;
-        }
-        p {
-            color: #666;
-            margin-bottom: 30px;
-            font-size: 1.1rem;
-        }
-        .zine-wrapper {
-            position: relative;
+        iframe {
             width: 100%;
-            /* Ensures an optimal responsive aspect ratio on larger devices */
-            padding-top: 75%; 
-        }
-        @media (min-width: 768px) {
-            .zine-wrapper {
-                padding-top: 56.25%; /* Switches to standard wide display for computers */
-            }
-        }
-        .zine-wrapper iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100% !important; 
+            height: 600px;
             border: 1px solid #e0e0e0;
             border-radius: 4px;
         }
@@ -63,14 +35,11 @@
 
     <div class="container">
         <h1>Our Neighborhood Health</h1>
-        <p>Welcome to our official zine. Flip through the pages below to explore our community resources and connection hubs.</p>
+        <p>Welcome to our official zine. Flip through the pages below to explore our community resources.</p>
         
-        <div class="zine-wrapper">
-            <!-- New Heyzine Embed Component -->
-            <iframe allowfullscreen allow="autoplay; fullscreen; clipboard-write" scrolling="no" src="https://heyzine.com/flip-book/0425e0ea66.html"></iframe>
-        </div>
+        <!-- Live Heyzine Link -->
+        <iframe allowfullscreen allow="autoplay; fullscreen; clipboard-write" scrolling="no" src="https://heyzine.com/flip-book/0425e0ea66.html"></iframe>
     </div>
 
 </body>
 </html>
-
