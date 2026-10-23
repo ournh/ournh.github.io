@@ -38,6 +38,25 @@
             height: 600px;
             border: 1px solid #e0e0e0;
             border-radius: 4px;
+            margin-bottom: 30px;
+        }
+        .qr-section {
+            margin-top: 20px;
+            padding: 20px;
+            border-top: 1px solid #eee;
+        }
+        .qr-section p {
+            font-size: 1rem;
+            margin-bottom: 15px;
+        }
+        .fp-qr-logo {
+            max-width: 150px;
+            width: 100%;
+            height: auto;
+            transition: transform 0.2s ease;
+        }
+        .fp-qr-logo:hover {
+            transform: scale(1.05);
         }
     </style>
 </head>
@@ -47,8 +66,16 @@
         <h1>Our Neighborhood Health</h1>
         <p>Welcome to our official zine. Flip through the pages below to explore our community resources.</p>
         
-        <!-- Only Embedded Zine -->
-        <iframe allowfullscreen allow="autoplay; fullscreen; clipboard-write" scrolling="no" src="https://heyzine.com/flip-book/fb598a2da8.html"></iframe>
+        <!-- Embedded Main Zine -->
+        <iframe allowfullscreen allow="autoplay; fullscreen; clipboard-write" scrolling="no" src="https://heyzine.com"></iframe>
+        
+        <!-- Secondary Zine QR Code Section -->
+        <div class="qr-section">
+            <p>Scan or click below to access our alternate community zine:</p>
+            <a href="https://heyzine.com/flip-book/1cf538e1bb.html" target="_blank" class="heyzine-link fp-link">
+                <img src="https://cdnm.heyzine.com/flip-book/qr-code/1cf538e1bb-669606.png?l=1&amp;dm=" alt="QR code" class="fp-qr-logo">
+            </a>
+        </div>
     </div>
 
 </body>
